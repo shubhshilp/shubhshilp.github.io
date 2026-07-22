@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Shubhshilp | Handmade Crafts</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}body{font-family:Arial,sans-serif;background:#faf7f2;color:#333;line-height:1.6}
+header{position:fixed;top:0;width:100%;display:flex;justify-content:space-between;align-items:center;padding:18px 8%;background:#5b3b1d;color:#fff}
+nav a{color:#fff;text-decoration:none;margin-left:18px}
+.hero{height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;background:linear-gradient(135deg,#6b3f1d,#d8b07a);color:#fff;padding:20px}
+.btn{display:inline-block;margin-top:20px;background:#fff;color:#5b3b1d;padding:12px 24px;border-radius:30px;text-decoration:none;font-weight:bold}
+section{padding:80px 8%}h2{text-align:center;margin-bottom:25px;color:#5b3b1d}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px}
+.card{background:#fff;padding:25px;border-radius:12px;box-shadow:0 4px 12px rgba(0,0,0,.1)}
+.contact{text-align:center}.wa{position:fixed;right:20px;bottom:20px;background:#25D366;color:#fff;text-decoration:none;padding:14px 18px;border-radius:30px}
+footer{text-align:center;padding:20px;background:#5b3b1d;color:#fff}
+@media(max-width:768px){header{flex-direction:column}.hero h1{font-size:2rem}}
+</style></head>
+<body>
+<header><h2>🌿 Shubhshilp</h2><nav><a href="#about">About</a><a href="#products">Products</a><a href="#contact">Contact</a></nav></header>
+<section class="hero"><h1>Handcrafted with Love</h1><p>Beautiful handmade gifts, home décor and custom creations.</p><a class="btn" href="#contact">Contact Us</a></section>
+<section id="about"><h2>About Us</h2><p style="max-width:800px;margin:auto;text-align:center">Shubhshilp is a handcrafted brand from Amroha, Uttar Pradesh, creating unique gifts, décor and artistic products with creativity and care.</p></section>
+<section id="products"><h2>Our Products</h2><div class="grid">
+<div class="card"><h3>Customized Gifts</h3><p>Personalized handmade gifts.</p></div>
+<div class="card"><h3>Home Décor</h3><p>Elegant handcrafted décor.</p></div>
+<div class="card"><h3>Festival Collection</h3><p>Seasonal handcrafted products.</p></div>
+<div class="card"><h3>Resin Art</h3><p>Creative resin artwork.</p></div>
+</div></section>
+<section id="contact" class="contact"><h2>Contact</h2>
+<p>📍 Amroha, Uttar Pradesh</p>
+<p>📞 +91 90848 87226</p>
+<p>✉️ shubhshilp7226@gmail.com</p>
+<p>📷 Instagram: @shubhshilp</p>
+</section>
+<a class="wa" href="https://wa.me/919084887226">WhatsApp</a>
+<footer>© 2026 Shubhshilp. All Rights Reserved.</footer>
+<script>
+document.querySelectorAll('a[href^="#"]').forEach(a=>a.onclick=e=>{e.preventDefault();document.querySelector(a.getAttribute('href')).scrollIntoView({behavior:'smooth'});});
+</script>
+</body></html>
