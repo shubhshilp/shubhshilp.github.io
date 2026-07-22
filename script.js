@@ -1,73 +1,101 @@
-// ===== SHUBHSHILP PREMIUM SCRIPT =====
+// ===============================
+// SHUBHSHILP V2.0
+// Premium Website Script
+// ===============================
 
 // Smooth scrolling
-document.querySelectorAll('a[href^="#"]').forEach(link=>{
-  link.addEventListener('click',e=>{
-    const target=document.querySelector(link.getAttribute('href'));
-    if(target){
-      e.preventDefault();
-      target.scrollIntoView({behavior:'smooth'});
-    }
-  });
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener("click", function(e){
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute("href"));
+        if(target){
+            target.scrollIntoView({
+                behavior:"smooth"
+            });
+        }
+    });
 });
 
 // Sticky header shadow
-const header=document.querySelector('.header');
-window.addEventListener('scroll',()=>{
-  if(window.scrollY>50){
-    header.style.boxShadow='0 8px 24px rgba(0,0,0,.18)';
-  }else{
-    header.style.boxShadow='none';
-  }
-});
+const header = document.querySelector(".header");
 
-// Fade-in sections
-const observer=new IntersectionObserver(entries=>{
-  entries.forEach(entry=>{
-    if(entry.isIntersecting){
-      entry.target.animate([
-        {opacity:0,transform:'translateY(40px)'},
-        {opacity:1,transform:'translateY(0)'}
-      ],{
-        duration:700,
-        fill:'forwards',
-        easing:'ease-out'
-      });
-      observer.unobserve(entry.target);
+window.addEventListener("scroll", () => {
+    if(window.scrollY > 50){
+        header.style.boxShadow = "0 10px 25px rgba(0,0,0,0.15)";
+    }else{
+        header.style.boxShadow = "none";
     }
-  });
-},{threshold:0.15});
-
-document.querySelectorAll('section').forEach(sec=>{
-  sec.style.opacity=0;
-  observer.observe(sec);
 });
 
-// Back to top button
-const btn=document.createElement('button');
-btn.innerHTML='↑';
-btn.title='Back to top';
-Object.assign(btn.style,{
-  position:'fixed',
-  bottom:'20px',
-  right:'20px',
-  width:'48px',
-  height:'48px',
-  border:'none',
-  borderRadius:'50%',
-  background:'#c8a24a',
-  color:'#fff',
-  fontSize:'22px',
-  cursor:'pointer',
-  display:'none',
-  zIndex:'9999'
-});
-document.body.appendChild(btn);
-
-window.addEventListener('scroll',()=>{
-  btn.style.display=window.scrollY>300?'block':'none';
+// Fade-in animation
+const observer = new IntersectionObserver((entries)=>{
+    entries.forEach(entry=>{
+        if(entry.isIntersecting){
+            entry.classList.add("show");
+        }
+    });
 });
 
-btn.onclick=()=>window.scrollTo({top:0,behavior:'smooth'});
+document.querySelectorAll("section").forEach(section=>{
+    section.classList.add("hidden");
+    observer.observe(section);
+});
 
-console.log("Welcome to Shubhshilp Premium");
+// Floating WhatsApp Button
+const whatsapp = document.createElement("a");
+
+whatsapp.href="https://wa.me/919084887226";
+whatsapp.innerHTML="💬";
+whatsapp.target="_blank";
+
+whatsapp.style.position="fixed";
+whatsapp.style.bottom="25px";
+whatsapp.style.right="25px";
+whatsapp.style.width="60px";
+whatsapp.style.height="60px";
+whatsapp.style.background="#25D366";
+whatsapp.style.color="white";
+whatsapp.style.display="flex";
+whatsapp.style.alignItems="center";
+whatsapp.style.justifyContent="center";
+whatsapp.style.borderRadius="50%";
+whatsapp.style.fontSize="30px";
+whatsapp.style.textDecoration="none";
+whatsapp.style.boxShadow="0 8px 25px rgba(0,0,0,.25)";
+whatsapp.style.zIndex="9999";
+
+document.body.appendChild(whatsapp);
+
+// Back-to-top button
+const topBtn=document.createElement("button");
+
+topBtn.innerHTML="↑";
+
+topBtn.style.position="fixed";
+topBtn.style.bottom="100px";
+topBtn.style.right="25px";
+topBtn.style.width="50px";
+topBtn.style.height="50px";
+topBtn.style.border="none";
+topBtn.style.borderRadius="50%";
+topBtn.style.background="#8b5e3c";
+topBtn.style.color="#fff";
+topBtn.style.fontSize="22px";
+topBtn.style.cursor="pointer";
+topBtn.style.display="none";
+topBtn.style.zIndex="9999";
+
+document.body.appendChild(topBtn);
+
+window.addEventListener("scroll",()=>{
+    topBtn.style.display=window.scrollY>300?"block":"none";
+});
+
+topBtn.onclick=()=>{
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
+    });
+};
+
+console.log("Shubhshilp V2 Loaded Successfully");
